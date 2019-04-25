@@ -12,7 +12,7 @@ jobs:
       - checkout
 
       # Install Parcel bundler globally
-      - run: npm install -g parcel
+      - run: sudo npm install -g parcel
 
       # Install NPM dependencies
       - restore_cache:
