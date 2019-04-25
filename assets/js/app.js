@@ -1,0 +1,58 @@
+/**
+ * HackerDesktop | main app file
+ */
+
+import "./jqueryImport";
+
+import "./../../node_modules/jquery-ui-dist/jquery-ui.min.css";
+import "./../../node_modules/jquery-ui-dist/jquery-ui.min";
+
+/* Hacker code typer view */
+
+const hackerCodeView = $("#hackerCodeView");
+
+import CodeTyper from "./codetyper";
+
+const codeTyper = new CodeTyper(hackerCodeView);
+
+$(document).keypress(() => {
+    codeTyper.hackerKeysPressed();
+
+    $(document).scrollTop($(document).height());
+});
+
+/* Window modules */
+
+const portscannerDialog = $("#portscannerDialog");
+const matrixcalculatorDialog = $("#matrixcalculatorDialog");
+
+portscannerDialog.dialog({
+    width: 450,
+    height: 300,
+    autoOpen: false
+});
+
+matrixcalculatorDialog.dialog({
+    width: 300,
+    height: 250,
+    autoOpen: false
+});
+
+import PortScanner from "./modules/portscanner";
+import MatrixCalculator from "./modules/matrixcalculator";
+
+new PortScanner(portscannerDialog.bind(this));
+new MatrixCalculator(matrixcalculatorDialog.bind(this));
+
+/* Module launchers */
+
+const portscannerLauncher = $("#portscannerLauncher");
+const matrixcalculatorLauncher = $("#matrixcalculatorLauncher");
+
+portscannerLauncher.on("click", () => {
+    portscannerDialog.dialog("open");
+});
+
+matrixcalculatorLauncher.on("click", () => {
+    matrixcalculatorDialog.dialog("open");
+});

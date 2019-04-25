@@ -1,0 +1,9 @@
+# IDE project folder
+/.idea
+
+# Dependencies
+/node_modules
+
+# Parcel output files
+/.cache
+/dist
