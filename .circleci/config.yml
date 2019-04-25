@@ -6,7 +6,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/node:11.14
+      - image: circleci/python:3.7-node
     steps:
       # Checkout branch
       - checkout
