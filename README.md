@@ -21,7 +21,7 @@
 ##
 
 [• Description](#-description)  
-[• Install](#-development-environment)  
+[• Development environment](#-development-environment)  
 [• Contribution](#-contribution)  
 [• License](#%EF%B8%8F-license)
 
