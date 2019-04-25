@@ -1,0 +1,33 @@
+version: 2.1
+
+orbs:
+  aws-s3: circleci/aws-s3@1.0.8
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:11.14
+    steps:
+      # Checkout branch
+      - checkout
+
+      # Install Parcel bundler globally
+      - run: npm install -g parcel
+
+      # Install NPM dependencies
+      - restore_cache:
+          key: npm-{{ checksum "package.json" }}
+      - run: npm install
+      - save_cache:
+          key: npm-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+
+      # Build production files
+      - run: npm run build
+
+      # Upload files to AWS S3
+      - aws-s3/sync:
+          from: dist
+          to: "s3://www.hackerdesktop.rocks"
+          arguments: "--delete"
