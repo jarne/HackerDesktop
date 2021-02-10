@@ -29,5 +29,5 @@ jobs:
       # Upload files to AWS S3
       - aws-s3/sync:
           from: dist
-          to: "s3://www.hackerdesktop.rocks"
+          to: "s3://gh-hackerdesktop"
           arguments: "--delete"
