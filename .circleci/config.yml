@@ -11,9 +11,6 @@ jobs:
       # Checkout branch
       - checkout
 
-      # Install Parcel bundler globally
-      - run: sudo npm install -g parcel
-
       # Install NPM dependencies
       - restore_cache:
           key: npm-{{ checksum "package.json" }}
