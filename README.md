@@ -13,9 +13,6 @@
     <a href="https://github.com/jarne/HackerDesktop/blob/master/LICENSE">
         <img src="https://img.shields.io/github/license/jarne/HackerDesktop.svg" alt="License">
     </a>
-    <a href="https://gitter.im/jarne/HackerDesktop">
-        <img src="https://img.shields.io/gitter/room/jarne/HackerDesktop.svg" alt="Gitter">
-    </a>
 </p>
 
 ##
