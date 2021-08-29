@@ -30,6 +30,7 @@
         "clear": "rm -r dist"
     },
     "devDependencies": {
+        "@parcel/transformer-sass": "^2.0.0-rc.0",
         "cssnano": "^5.0",
         "jquery": "^3.6",
         "jquery-ui-dist": "^1.12",

@@ -3,6 +3,7 @@
 /node_modules
 
 # Cache
+/.parcel-cache
 /.cache
 
 # Built files
