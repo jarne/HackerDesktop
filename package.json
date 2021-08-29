@@ -29,12 +29,14 @@
         "format": "./node_modules/.bin/prettier --write \"**/*.{js,jsx,ts,tsx,json}\"",
         "clear": "rm -r dist"
     },
-    "devDependencies": {
-        "@parcel/transformer-sass": "^2.0.0-rc.0",
+    "dependencies": {
+        "@parcel/transformer-sass": "2.0.0-beta.2",
         "cssnano": "^5.0",
         "jquery": "^3.6",
         "jquery-ui-dist": "^1.12",
-        "prettier": "^2.3",
         "sass": "^1.38"
+    },
+    "devDependencies": {
+        "prettier": "^2.3"
     }
 }
