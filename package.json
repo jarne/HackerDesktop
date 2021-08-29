@@ -1,37 +1,39 @@
 {
-  "name": "hackerdesktop",
-  "version": "1.0.0",
-  "description": "A fake hacker desktop with black screen and green font",
-  "keywords": [
-    "hacker",
-    "desktop",
-    "windows",
-    "apps",
-    "green",
-    "font"
-  ],
-  "homepage": "https://github.com/jarne/HackerDesktop",
-  "bugs": {
-    "url": "https://github.com/jarne/HackerDesktop/issues"
-  },
-  "license": "MIT",
-  "author": {
-    "name": "Jarne",
-    "url": "https://github.com/jarne"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jarne/HackerDesktop.git"
-  },
-  "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html",
-    "clear": "rm -r dist"
-  },
-  "devDependencies": {
-    "cssnano": "^5.0",
-    "jquery": "^3.6",
-    "jquery-ui-dist": "^1.12",
-    "sass": "^1.38"
-  }
+    "name": "hackerdesktop",
+    "version": "1.0.0",
+    "description": "A fake hacker desktop with black screen and green font",
+    "keywords": [
+        "hacker",
+        "desktop",
+        "windows",
+        "apps",
+        "green",
+        "font"
+    ],
+    "homepage": "https://github.com/jarne/HackerDesktop",
+    "bugs": {
+        "url": "https://github.com/jarne/HackerDesktop/issues"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Jarne",
+        "url": "https://github.com/jarne"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jarne/HackerDesktop.git"
+    },
+    "scripts": {
+        "start": "parcel index.html",
+        "build": "parcel build index.html",
+        "format": "./node_modules/.bin/prettier --write \"**/*.{js,jsx,ts,tsx,json}\"",
+        "clear": "rm -r dist"
+    },
+    "devDependencies": {
+        "cssnano": "^5.0",
+        "jquery": "^3.6",
+        "jquery-ui-dist": "^1.12",
+        "prettier": "^2.3",
+        "sass": "^1.38"
+    }
 }

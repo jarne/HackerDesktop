@@ -1,0 +1,9 @@
+# Dependencies
+/package-lock.json
+/node_modules
+
+# Cache
+/.cache
+
+# Built files
+/dist

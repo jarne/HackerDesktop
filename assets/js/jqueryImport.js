@@ -4,4 +4,4 @@
 
 import jQuery from "jquery";
 
-export default (window.$ = window.jQuery = jQuery);
+export default window.$ = window.jQuery = jQuery;
