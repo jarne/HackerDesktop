@@ -30,15 +30,15 @@
         "clear": "rm -r dist"
     },
     "dependencies": {
-        "@parcel/transformer-image": "2.0.0-rc.0",
-        "@parcel/transformer-sass": "2.0.0-rc.0",
+        "@parcel/transformer-image": "^2.0",
+        "@parcel/transformer-sass": "^2.0",
         "cssnano": "^5.0",
         "jquery": "^3.6",
         "jquery-ui-dist": "^1.12",
-        "parcel": "2.0.0-rc.0",
-        "sass": "^1.38"
+        "parcel": "^2.0",
+        "sass": "^1.43"
     },
     "devDependencies": {
-        "prettier": "^2.3"
+        "prettier": "^2.4"
     }
 }
