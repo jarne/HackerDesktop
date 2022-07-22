@@ -1,30 +1,30 @@
 version: 2.1
 
 orbs:
-  aws-s3: circleci/aws-s3@2.0.0
+    aws-s3: circleci/aws-s3@3.0.0
 
 jobs:
-  build:
-    docker:
-      - image: circleci/python:3.9-node
-    steps:
-      # Checkout branch
-      - checkout
+    build:
+        docker:
+            - image: cimg/python:3.10-node
+        steps:
+            # Checkout branch
+            - checkout
 
-      # Install NPM dependencies
-      - restore_cache:
-          key: npm-{{ checksum "package.json" }}
-      - run: npm install
-      - save_cache:
-          key: npm-{{ checksum "package.json" }}
-          paths:
-            - node_modules
+            # Install NPM dependencies
+            - restore_cache:
+                  key: npm-{{ checksum "package.json" }}
+            - run: npm install
+            - save_cache:
+                  key: npm-{{ checksum "package.json" }}
+                  paths:
+                      - node_modules
 
-      # Build production files
-      - run: npm run build
+            # Build production files
+            - run: npm run build
 
-      # Upload files to AWS S3
-      - aws-s3/sync:
-          from: dist
-          to: "s3://gh-hackerdesktop"
-          arguments: "--delete"
+            # Upload files to AWS S3
+            - aws-s3/sync:
+                  from: dist
+                  to: "s3://gh-hackerdesktop"
+                  arguments: "--delete"

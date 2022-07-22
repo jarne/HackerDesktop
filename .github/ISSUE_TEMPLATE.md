@@ -6,7 +6,7 @@
     before creating an issue at this repo.
 
     Everything written in brackets [ ... ] are placeholders and should be replaced (without the brackets, of course).
-    
+
     Thanks for your support in order to keep the issue tracker clean!
 
 -->
@@ -31,10 +31,10 @@
 
 ### 🌱 Environment
 
-OS: [ Your OS ]  
+OS: [ Your OS ]
 
 Browser / version: [ The version of the browser you used ]  
-Version of this application: [ The version of this application you used ]  
+Version of this application: [ The version of this application you used ]
 
 ### ℹ️ Additional information
 

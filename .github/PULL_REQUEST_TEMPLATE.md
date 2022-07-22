@@ -5,7 +5,7 @@
     before creating an issue at this repo.
 
     Everything written in brackets [ ... ] are placeholders and should be replaced (without the brackets, of course).
-    
+
     Thanks for your support in order to keep the pull requests section clean!
 
 -->
@@ -16,9 +16,9 @@
 
 **What kind of pull request is this?**
 
-- [ ] Bug Fix
-- [ ] Improvement
-- [ ] New Feature
+-   [ ] Bug Fix
+-   [ ] Improvement
+-   [ ] New Feature
 
 **Is this pull request related to an issue?**
 

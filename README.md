@@ -23,6 +23,7 @@
 [• License](#%EF%B8%8F-license)
 
 ## 📙 Description
+
 This is a fake hacker desktop web app, built with JavaScript and jQuery / jQuery UI.
 
 Here's a screenshot of the app:
@@ -30,6 +31,7 @@ Here's a screenshot of the app:
 <img src=".github/.media/screenshot.png" alt="Screenshot of the hacker desktop">
 
 ## 💻 Development environment
+
 In order to run the application, you first need to install the development dependencies with:
 
 ```
@@ -53,6 +55,7 @@ $ npm run build
 The files are created in the `dist`-folder.
 
 ## 🙋‍ Contribution
+
 Contributions are always very welcome! It's completely equally if you're a beginner or a more experienced developer.
 
 Please read our **[Contribution Guidelines](CONTRIBUTING.md)** before creating an issue or submitting a pull request.
@@ -60,4 +63,5 @@ Please read our **[Contribution Guidelines](CONTRIBUTING.md)** before creating a
 Thanks for your interest 🎉👍!
 
 ## 👨‍⚖️ License
+
 [MIT](https://github.com/jarne/HackerDesktop/blob/master/LICENSE)
