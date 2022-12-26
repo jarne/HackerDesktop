@@ -15,7 +15,7 @@ import CodeTyper from "./codetyper";
 
 const codeTyper = new CodeTyper(hackerCodeView);
 
-$(document).keypress(() => {
+$(document).on("keypress", () => {
     codeTyper.hackerKeysPressed();
 
     $(document).scrollTop($(document).height());
@@ -41,8 +41,8 @@ matrixcalculatorDialog.dialog({
 import PortScanner from "./modules/portscanner";
 import MatrixCalculator from "./modules/matrixcalculator";
 
-new PortScanner(portscannerDialog.bind(this));
-new MatrixCalculator(matrixcalculatorDialog.bind(this));
+new PortScanner(portscannerDialog.on(this));
+new MatrixCalculator(matrixcalculatorDialog.on(this));
 
 /* Module launchers */
 

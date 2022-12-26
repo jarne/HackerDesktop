@@ -24,21 +24,19 @@
         "url": "https://github.com/jarne/HackerDesktop.git"
     },
     "scripts": {
-        "start": "./node_modules/.bin/parcel index.html",
-        "build": "./node_modules/.bin/parcel build index.html",
-        "format": "./node_modules/.bin/prettier --write \"**/*.{js,css,scss,html,json,yml,md}\"",
-        "clear": "rm -r dist"
+        "start": "parcel index.html",
+        "build": "parcel build index.html",
+        "format": "prettier --write \"**/*.{js,css,scss,html,json,yml,md}\""
     },
     "dependencies": {
-        "@parcel/transformer-image": "^2.6",
-        "@parcel/transformer-sass": "^2.6",
+        "@parcel/transformer-sass": "^2.8",
         "cssnano": "^5.1",
         "jquery": "^3.6",
         "jquery-ui-dist": "^1.13",
-        "parcel": "^2.6",
-        "sass": "^1.53"
+        "parcel": "^2.8",
+        "sass": "^1.57"
     },
     "devDependencies": {
-        "prettier": "^2.7"
+        "prettier": "^2.8"
     }
 }
