@@ -34,6 +34,7 @@
         "jquery": "^3.6",
         "jquery-ui-dist": "^1.13",
         "parcel": "^2.8",
+        "postcss": "^8.4",
         "sass": "^1.57"
     },
     "devDependencies": {
