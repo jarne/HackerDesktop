@@ -25,10 +25,7 @@ jobs:
             - run: npm run build
 
             # Authenticate at AWS
-            - aws-cli/setup:
-                  aws_access_key_id: "${AWS_ACCESS_KEY_ID}"
-                  aws_secret_access_key: "${AWS_SECRET_ACCESS_KEY}"
-                  region: "${AWS_REGION}"
+            - aws-cli/setup
 
             # Upload files to AWS S3
             - aws-s3/sync:
