@@ -24,13 +24,14 @@ jobs:
             # Build production files
             - run: npm run build
 
+            # Authenticate at AWS
+            - aws-cli/setup:
+                  aws_access_key_id: "${AWS_ACCESS_KEY_ID}"
+                  aws_secret_access_key: "${AWS_SECRET_ACCESS_KEY}"
+                  region: "${AWS_REGION}"
+
             # Upload files to AWS S3
             - aws-s3/sync:
-                  auth:
-                      - aws-cli/setup:
-                            aws_access_key_id: "${AWS_ACCESS_KEY_ID}"
-                            aws_secret_access_key: "${AWS_SECRET_ACCESS_KEY}"
-                            region: "${AWS_REGION}"
                   from: dist
                   to: "s3://gh-hackerdesktop"
                   arguments: "--delete"
