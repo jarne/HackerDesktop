@@ -16,9 +16,9 @@
 
 **What kind of pull request is this?**
 
--   [ ] Bug Fix
--   [ ] Improvement
--   [ ] New Feature
+- [ ] Bug Fix
+- [ ] Improvement
+- [ ] New Feature
 
 **Is this pull request related to an issue?**
 
