@@ -6,9 +6,7 @@ class MatrixCalculator {
     constructor(matrixcalculatorDialog) {
         this.dialog = matrixcalculatorDialog;
 
-        this.dialog.onshow = () => {
-            this.addMatrixDigit();
-        };
+        this.addMatrixDigit();
     }
 
     static randomDigit() {
@@ -16,8 +14,11 @@ class MatrixCalculator {
     }
 
     addMatrixDigit() {
-        this.dialog.body.innerHTML += MatrixCalculator.randomDigit();
+        if (this.dialog.body === null) {
+            return;
+        }
 
+        this.dialog.body.innerHTML += MatrixCalculator.randomDigit();
         this.dialog.body.scrollTop = this.dialog.body.scrollHeight;
 
         setTimeout(this.addMatrixDigit.bind(this), 10);

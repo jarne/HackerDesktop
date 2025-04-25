@@ -8,9 +8,7 @@ class PortScanner {
     constructor(portscannerDialog) {
         this.dialog = portscannerDialog;
 
-        this.dialog.onshow = () => {
-            this.addScannedPort();
-        };
+        this.addScannedPort();
     }
 
     static randomPort() {
@@ -26,8 +24,11 @@ class PortScanner {
     }
 
     addScannedPort() {
-        this.dialog.body.innerHTML += `<p>scanning security port ${PortScanner.randomPort()}, port is ${PortScanner.randomOpenClosed()}</p>`;
+        if (this.dialog.body === null) {
+            return;
+        }
 
+        this.dialog.body.innerHTML += `<p>scanning security port ${PortScanner.randomPort()}, port is ${PortScanner.randomOpenClosed()}</p>`;
         this.dialog.body.scrollTop = this.dialog.body.scrollHeight;
 
         setTimeout(this.addScannedPort.bind(this), 500);

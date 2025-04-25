@@ -4,11 +4,13 @@
 
 import "winbox/dist/winbox.bundle.min.js";
 
+import CodeTyper from "./codetyper";
+import PortScanner from "./modules/portscanner";
+import MatrixCalculator from "./modules/matrixcalculator";
+
 /* Hacker code typer view */
 
 const hackerCodeView = document.getElementById("hackerCodeView");
-
-import CodeTyper from "./codetyper";
 
 const codeTyper = new CodeTyper(hackerCodeView);
 
@@ -20,24 +22,8 @@ document.addEventListener("keypress", () => {
 
 /* Window modules */
 
-const portscannerDialog = new WinBox("PORT SCANNER", {
-    width: 450,
-    height: 300,
-    hidden: true,
-    class: "module-window"
-});
-const matrixcalculatorDialog = new WinBox("MATRIX CALCULATOR", {
-    width: 300,
-    height: 250,
-    hidden: true,
-    class: "module-window"
-});
-
-import PortScanner from "./modules/portscanner";
-import MatrixCalculator from "./modules/matrixcalculator";
-
-new PortScanner(portscannerDialog);
-new MatrixCalculator(matrixcalculatorDialog);
+let portscannerDialog;
+let matrixcalculatorDialog;
 
 /* Module launchers */
 
@@ -47,9 +33,19 @@ const matrixcalculatorLauncher = document.getElementById(
 );
 
 portscannerLauncher.addEventListener("click", () => {
-    portscannerDialog.show();
+    portscannerDialog = new WinBox("PORT SCANNER", {
+        width: 450,
+        height: 300,
+        class: "module-window"
+    });
+    new PortScanner(portscannerDialog);
 });
 
 matrixcalculatorLauncher.addEventListener("click", () => {
-    matrixcalculatorDialog.show();
+    matrixcalculatorDialog = new WinBox("MATRIX CALCULATOR", {
+        width: 300,
+        height: 250,
+        class: "module-window"
+    });
+    new MatrixCalculator(matrixcalculatorDialog);
 });
