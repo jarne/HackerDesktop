@@ -28,7 +28,7 @@ class PortScanner {
             return;
         }
 
-        this.dialog.body.innerHTML += `<p>scanning security port ${PortScanner.randomPort()}, port is ${PortScanner.randomOpenClosed()}</p>`;
+        this.dialog.body.innerHTML += `<p>scanning security port <b>${PortScanner.randomPort()}</b>, port is ${PortScanner.randomOpenClosed()}</p>`;
         this.dialog.body.scrollTop = this.dialog.body.scrollHeight;
 
         setTimeout(this.addScannedPort.bind(this), 500);
