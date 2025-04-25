@@ -1,18 +1,18 @@
 version: 2.1
 
 orbs:
-    aws-cli: circleci/aws-cli@5.3.1
+    aws-cli: circleci/aws-cli@5.3.2
     aws-s3: circleci/aws-s3@4.1.1
 
 jobs:
-    build-deploy-s3:
+    build:
         docker:
-            - image: cimg/python:3.13-node
+            - image: cimg/node:22.15
         steps:
             # Checkout branch
             - checkout
 
-            # Install NPM dependencies
+            # Install dependencies using NPM
             - restore_cache:
                   key: npm-{{ checksum "package.json" }}
             - run: npm ci
@@ -21,8 +21,21 @@ jobs:
                   paths:
                       - node_modules
 
-            # Build production files
+            # Build app
             - run: npm run build
+
+            # Persist build output for deploy step
+            - persist_to_workspace:
+                  root: .
+                  paths:
+                      - dist
+    deploy-s3:
+        docker:
+            - image: cimg/python:3.13
+        steps:
+            # Restore build output workspace
+            - attach_workspace:
+                  at: .
 
             # Authenticate at AWS
             - aws-cli/setup
@@ -34,9 +47,12 @@ jobs:
                   arguments: "--delete"
 
 workflows:
-    deploy:
+    build-deploy:
         jobs:
-            - build-deploy-s3:
+            - build
+            - deploy-s3:
+                  requires:
+                      - build
                   filters:
                       branches:
                           only:
