@@ -2,6 +2,8 @@
  * HackerDesktop | app style
  */
 
+@use "./variables.scss" as vars;
+
 html,
 body {
     height: 100vh;
@@ -10,7 +12,7 @@ body {
 }
 
 body {
-    background-color: black;
+    background-color: vars.$hacker-black;
 }
 
 #moduleLauncher {
@@ -22,10 +24,9 @@ body {
 
     width: 15vw;
 
-    background-color: #00ff00;
+    background-color: vars.$hacker-green;
 
     text-align: center;
-
     font-family: monospace;
 }
 
@@ -33,10 +34,17 @@ body {
     padding: 5px;
 }
 
-.green-text {
-    color: #00ff00;
+.module-window .wb-header {
+    background-color: vars.$hacker-green;
+    color: vars.$hacker-black;
 }
 
-.red-text {
-    color: #ff0000;
+.module-window .wb-body {
+    font-family: monospace;
+
+    background-color: vars.$hacker-grey;
+    color: vars.$hacker-white;
+
+    word-wrap: break-word;
+    overflow: hidden;
 }

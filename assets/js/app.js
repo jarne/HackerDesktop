@@ -2,57 +2,54 @@
  * HackerDesktop | main app file
  */
 
-import "./jqueryImport";
-
-import "jquery-ui-dist/jquery-ui.min.css";
-import "jquery-ui-dist/jquery-ui.min";
+import "winbox/dist/winbox.bundle.min.js";
 
 /* Hacker code typer view */
 
-const hackerCodeView = $("#hackerCodeView");
+const hackerCodeView = document.getElementById("hackerCodeView");
 
 import CodeTyper from "./codetyper";
 
 const codeTyper = new CodeTyper(hackerCodeView);
 
-$(document).on("keypress", () => {
+document.addEventListener("keypress", () => {
     codeTyper.hackerKeysPressed();
 
-    $(document).scrollTop($(document).height());
+    document.documentElement.scrollTop = document.documentElement.scrollHeight;
 });
 
 /* Window modules */
 
-const portscannerDialog = $("#portscannerDialog");
-const matrixcalculatorDialog = $("#matrixcalculatorDialog");
-
-portscannerDialog.dialog({
+const portscannerDialog = new WinBox("PORT SCANNER", {
     width: 450,
     height: 300,
-    autoOpen: false
+    hidden: true,
+    class: "module-window"
 });
-
-matrixcalculatorDialog.dialog({
+const matrixcalculatorDialog = new WinBox("MATRIX CALCULATOR", {
     width: 300,
     height: 250,
-    autoOpen: false
+    hidden: true,
+    class: "module-window"
 });
 
 import PortScanner from "./modules/portscanner";
 import MatrixCalculator from "./modules/matrixcalculator";
 
-new PortScanner(portscannerDialog.on(this));
-new MatrixCalculator(matrixcalculatorDialog.on(this));
+new PortScanner(portscannerDialog);
+new MatrixCalculator(matrixcalculatorDialog);
 
 /* Module launchers */
 
-const portscannerLauncher = $("#portscannerLauncher");
-const matrixcalculatorLauncher = $("#matrixcalculatorLauncher");
+const portscannerLauncher = document.getElementById("portscannerLauncher");
+const matrixcalculatorLauncher = document.getElementById(
+    "matrixcalculatorLauncher"
+);
 
-portscannerLauncher.on("click", () => {
-    portscannerDialog.dialog("open");
+portscannerLauncher.addEventListener("click", () => {
+    portscannerDialog.show();
 });
 
-matrixcalculatorLauncher.on("click", () => {
-    matrixcalculatorDialog.dialog("open");
+matrixcalculatorLauncher.addEventListener("click", () => {
+    matrixcalculatorDialog.show();
 });

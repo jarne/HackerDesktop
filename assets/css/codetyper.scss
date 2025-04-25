@@ -2,11 +2,12 @@
  * HackerDesktop | hacker code typer style
  */
 
+@use "./variables.scss" as vars;
+
 #hackerCodeView {
     width: 100vw;
     height: 100vh;
 
+    color: vars.$hacker-green;
     font-family: monospace;
-
-    color: #00ff00;
 }

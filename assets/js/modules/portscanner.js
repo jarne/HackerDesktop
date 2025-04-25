@@ -2,13 +2,15 @@
  * HackerDesktop | port scanner module
  */
 
+import "./../../css/modules/portscanner.scss";
+
 class PortScanner {
     constructor(portscannerDialog) {
         this.dialog = portscannerDialog;
 
-        this.dialog.on("dialogopen", () => {
+        this.dialog.onshow = () => {
             this.addScannedPort();
-        });
+        };
     }
 
     static randomPort() {
@@ -17,22 +19,21 @@ class PortScanner {
 
     static randomOpenClosed() {
         if (Math.random() > 0.85) {
-            return "<span class='green-text'>open</span>";
+            return "<span class='text-green'>open</span>";
         }
 
-        return "<span class='red-text'>closed</span>";
+        return "<span class='text-red'>closed</span>";
     }
 
     addScannedPort() {
-        this.dialog.append(
+        this.dialog.body.innerHTML +=
             "<p>scanning security port " +
-                PortScanner.randomPort() +
-                ", port is " +
-                PortScanner.randomOpenClosed() +
-                "</p>"
-        );
+            PortScanner.randomPort() +
+            ", port is " +
+            PortScanner.randomOpenClosed() +
+            "</p>";
 
-        this.dialog.prop("scrollTop", this.dialog.prop("scrollHeight"));
+        this.dialog.body.scrollTop = this.dialog.body.scrollHeight;
 
         setTimeout(this.addScannedPort.bind(this), 500);
     }

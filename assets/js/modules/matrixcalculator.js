@@ -2,15 +2,13 @@
  * HackerDesktop | matrix calculator module
  */
 
-import "./../../css/modules/matrixcalculator.scss";
-
 class MatrixCalculator {
     constructor(matrixcalculatorDialog) {
         this.dialog = matrixcalculatorDialog;
 
-        this.dialog.on("dialogopen", () => {
+        this.dialog.onshow = () => {
             this.addMatrixDigit();
-        });
+        };
     }
 
     static randomDigit() {
@@ -18,9 +16,9 @@ class MatrixCalculator {
     }
 
     addMatrixDigit() {
-        this.dialog.append(MatrixCalculator.randomDigit());
+        this.dialog.body.innerHTML += MatrixCalculator.randomDigit();
 
-        this.dialog.prop("scrollTop", this.dialog.prop("scrollHeight"));
+        this.dialog.body.scrollTop = this.dialog.body.scrollHeight;
 
         setTimeout(this.addMatrixDigit.bind(this), 10);
     }
