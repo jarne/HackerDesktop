@@ -23,7 +23,7 @@ HackerDesktop is a fake hacker web app designed for fun, pranks, or cinematic fl
 
 ### Architecture
 
-HackerDesktop is a static web app created with plain JavaScript and SCSS. It uses jQuery UI
+HackerDesktop is a static web app created with plain JavaScript and SCSS. It uses [Winbox](https://github.com/nextapps-de/winbox)
 as a dependency for displaying windows inside the application.
 Each "hacker app" (window) logic is located in a separate file in the [modules](./assets/js/modules/) folder.
 
