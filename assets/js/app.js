@@ -2,57 +2,50 @@
  * HackerDesktop | main app file
  */
 
-import "./jqueryImport";
+import "winbox/dist/winbox.bundle.min.js";
 
-import "./../../node_modules/jquery-ui-dist/jquery-ui.min.css";
-import "./../../node_modules/jquery-ui-dist/jquery-ui.min";
+import CodeTyper from "./codetyper";
+import PortScanner from "./modules/portscanner";
+import MatrixCalculator from "./modules/matrixcalculator";
 
 /* Hacker code typer view */
 
-const hackerCodeView = $("#hackerCodeView");
-
-import CodeTyper from "./codetyper";
+const hackerCodeView = document.getElementById("hackerCodeView");
 
 const codeTyper = new CodeTyper(hackerCodeView);
 
-$(document).on("keypress", () => {
+document.addEventListener("keypress", () => {
     codeTyper.hackerKeysPressed();
 
-    $(document).scrollTop($(document).height());
+    document.documentElement.scrollTop = document.documentElement.scrollHeight;
 });
 
 /* Window modules */
 
-const portscannerDialog = $("#portscannerDialog");
-const matrixcalculatorDialog = $("#matrixcalculatorDialog");
-
-portscannerDialog.dialog({
-    width: 450,
-    height: 300,
-    autoOpen: false
-});
-
-matrixcalculatorDialog.dialog({
-    width: 300,
-    height: 250,
-    autoOpen: false
-});
-
-import PortScanner from "./modules/portscanner";
-import MatrixCalculator from "./modules/matrixcalculator";
-
-new PortScanner(portscannerDialog.on(this));
-new MatrixCalculator(matrixcalculatorDialog.on(this));
+let portscannerDialog;
+let matrixcalculatorDialog;
 
 /* Module launchers */
 
-const portscannerLauncher = $("#portscannerLauncher");
-const matrixcalculatorLauncher = $("#matrixcalculatorLauncher");
+const portscannerLauncher = document.getElementById("portscannerLauncher");
+const matrixcalculatorLauncher = document.getElementById(
+    "matrixcalculatorLauncher"
+);
 
-portscannerLauncher.on("click", () => {
-    portscannerDialog.dialog("open");
+portscannerLauncher.addEventListener("click", () => {
+    portscannerDialog = new WinBox("PORT SCANNER", {
+        width: 450,
+        height: 300,
+        class: "module-window"
+    });
+    new PortScanner(portscannerDialog);
 });
 
-matrixcalculatorLauncher.on("click", () => {
-    matrixcalculatorDialog.dialog("open");
+matrixcalculatorLauncher.addEventListener("click", () => {
+    matrixcalculatorDialog = new WinBox("MATRIX CALCULATOR", {
+        width: 300,
+        height: 250,
+        class: "module-window"
+    });
+    new MatrixCalculator(matrixcalculatorDialog);
 });

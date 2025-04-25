@@ -1,0 +1,13 @@
+/**
+ * HackerDesktop | port scanner style
+ */
+
+@use "./../variables.scss" as vars;
+
+.text-green {
+    color: vars.$hacker-green;
+}
+
+.text-red {
+    color: vars.$hacker-red;
+}

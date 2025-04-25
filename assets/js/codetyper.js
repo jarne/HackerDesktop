@@ -29,7 +29,7 @@ class CodeTyper {
         const charsCount = Math.floor(Math.random() * (10 - 2)) + 2;
 
         for (let c = 0; c < charsCount; c++) {
-            this.hackerCodeView.append(this.codeChar());
+            this.hackerCodeView.innerHTML += this.codeChar();
         }
     }
 }
