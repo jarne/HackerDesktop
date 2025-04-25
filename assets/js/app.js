@@ -4,8 +4,8 @@
 
 import "./jqueryImport";
 
-import "./../../node_modules/jquery-ui-dist/jquery-ui.min.css";
-import "./../../node_modules/jquery-ui-dist/jquery-ui.min";
+import "jquery-ui-dist/jquery-ui.min.css";
+import "jquery-ui-dist/jquery-ui.min";
 
 /* Hacker code typer view */
 
