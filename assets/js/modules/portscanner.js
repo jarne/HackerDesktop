@@ -19,19 +19,14 @@ class PortScanner {
 
     static randomOpenClosed() {
         if (Math.random() > 0.85) {
-            return "<span class='text-green'>open</span>";
+            return '<span class="text-green">open</span>';
         }
 
-        return "<span class='text-red'>closed</span>";
+        return '<span class="text-red">closed</span>';
     }
 
     addScannedPort() {
-        this.dialog.body.innerHTML +=
-            "<p>scanning security port " +
-            PortScanner.randomPort() +
-            ", port is " +
-            PortScanner.randomOpenClosed() +
-            "</p>";
+        this.dialog.body.innerHTML += `<p>scanning security port ${PortScanner.randomPort()}, port is ${PortScanner.randomOpenClosed()}</p>`;
 
         this.dialog.body.scrollTop = this.dialog.body.scrollHeight;
 
