@@ -1,5 +1,5 @@
 <h1 align="center">HackerDesktop</h1>
-<p align="center">A fake hacker desktop with black screen and green font</p>
+<p align="center">Fake hacker web app and code typer, designed for fun</p>
 
 <p align="center">
     <a href="https://github.com/jarne/HackerDesktop/blob/master/package.json">
@@ -15,7 +15,7 @@
 
 ## 📙 Description
 
-This is a fake hacker desktop web app, built with JavaScript and jQuery / jQuery UI.
+HackerDesktop is a fake hacker web app designed for fun, pranks, or cinematic flair. The main screen features a hacker code typer, simulating fast-paced terminal activity. Side windows include a faux port scanner that “scans” IP addresses with realistic-looking feedback, and a random number calculator to generate fake encryption keys or access codes. Perfect for role-play, streaming overlays, or feeling like a pro hacker with zero risk.
 
 ### Screenshots
 
