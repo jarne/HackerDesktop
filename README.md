@@ -1,8 +1,6 @@
 <h1 align="center">HackerDesktop</h1>
 <p align="center">A fake hacker desktop with black screen and green font</p>
 
-<br>
-
 <p align="center">
     <a href="https://github.com/jarne/HackerDesktop/blob/master/package.json">
         <img src="https://img.shields.io/github/package-json/v/jarne/HackerDesktop.svg" alt="Package version">
@@ -15,21 +13,29 @@
     </a>
 </p>
 
-##
-
-[Description](#-description) | [Development environment](#-development-environment) | [Contribution](#-contribution) | [License](#%EF%B8%8F-license)
-
 ## 📙 Description
 
 This is a fake hacker desktop web app, built with JavaScript and jQuery / jQuery UI.
 
-Here's a screenshot of the app:
+### Screenshots
 
 <img src=".github/.media/screenshot.png" alt="Screenshot of the hacker desktop">
 
-## 💻 Development environment
+### Architecture
 
-In order to run the application, you first need to install the development dependencies with:
+HackerDesktop is a static web app created with plain JavaScript and SCSS. It uses jQuery UI
+as a dependency for displaying windows inside the application.
+Each "hacker app" (window) logic is located in a separate file in the [modules](./assets/js/modules/) folder.
+
+## 🖥 Usage
+
+### Using the hosted version of the app
+
+Use the hosted version at [d2l8gyoh7b3otl.cloudfront.net](https://d2l8gyoh7b3otl.cloudfront.net) (automatic deploys from this repo).
+
+### Build it locally
+
+Firstly, clone the repository and install the dependencies using:
 
 ```
 $ npm install
@@ -41,19 +47,17 @@ Then, you can start the development web server with:
 $ npm start
 ```
 
-This app is using the [Parcel](https://parceljs.org) bundler, so you need to have installed Parcel in order to start the development server.
-
-You can create a production build using:
+A production build of the web app can be created using:
 
 ```
 $ npm run build
 ```
 
-The files are created in the `dist`-folder.
+The output files are located in the `dist` folder.
 
 ## 🙋‍ Contribution
 
-Contributions are always very welcome! It's completely equally if you're a beginner or a more experienced developer.
+Contributions are always very welcome! It's completely equal if you're a beginner or a more experienced developer.
 
 Please read our **[Contribution Guidelines](CONTRIBUTING.md)** before creating an issue or submitting a pull request.
 
