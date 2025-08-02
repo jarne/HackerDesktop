@@ -7,7 +7,7 @@ orbs:
 jobs:
     build:
         docker:
-            - image: cimg/node:22.17.1
+            - image: cimg/node:22.18.0
         steps:
             # Checkout branch
             - checkout
