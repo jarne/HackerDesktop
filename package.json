@@ -30,7 +30,7 @@
     },
     "dependencies": {
         "@parcel/transformer-sass": "^2.10",
-        "cssnano": "^7.0.0",
+        "cssnano": "^8.0.0",
         "parcel": "^2.10",
         "postcss": "^8.4",
         "sass": "^1.69",
